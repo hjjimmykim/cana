@@ -4,10 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jimmy & Juliette — July 3, 2027</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* === PRODUCTION CSS - Replaces Tailwind CDN === */
+        :root { --ivory: #FFFCF5; --ivory-dark: #F8F3E7; --forest: #0F241C; --gold: #C4A46A; }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--ivory); color: var(--forest); font-weight: 300; -webkit-font-smoothing: antialiased; }
+        
+        
+        /* === Tailwind Preflight (base reset) === */
+        *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
+        html{line-height:1.5;-webkit-text-size-adjust:100%;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif}
+        body{margin:0;line-height:inherit}
+        hr{height:0;color:inherit;border-top-width:1px}
+        abbr:where([title]){text-decoration:underline dotted}
+        h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}
+        a{color:inherit;text-decoration:inherit}
+        b,strong{font-weight:bolder}
+        code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,monospace;font-size:1em}
+        small{font-size:80%}
+        sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+        sub{bottom:-.25em}sup{top:-.5em}
+        table{text-indent:0;border-color:inherit;border-collapse:collapse}
+        button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}
+        button,select{text-transform:none}
+        button,[type='button'],[type='reset'],[type='submit']{-webkit-appearance:button;background-image:none}
+        :-moz-focusring{outline:auto}
+        :-moz-ui-invalid{box-shadow:none}
+        progress{vertical-align:baseline}
+        ::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}
+        [type='search']{-webkit-appearance:textfield;outline-offset:-2px}
+        ::-webkit-search-decoration{-webkit-appearance:none}
+        ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+        summary{display:list-item}
+        blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}
+        fieldset{margin:0;padding:0}
+        legend{padding:0}
+        ol,ul,menu{list-style:none;margin:0;padding:0}
+        dialog{padding:0}
+        textarea{resize:vertical}
+        input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
+        button,[role="button"]{cursor:pointer}
+        :disabled{cursor:default}
+        img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}
+        img,video{max-width:100%;height:auto}
+        [hidden]{display:none}
+
+        /* Fix radio buttons - ensure border shows */
+        .w-5.h-5.border{border-width:1px;border-style:solid}
+        .rounded-full{border-radius:9999px}
+        /* Ensure the dot is hidden by default and shows on check */
+        .group input:checked + .w-5 .w-2\.5, .group:has(input:checked) .w-2\.5 { opacity: 1 !important; }
+
+        /* Fix form labels and inputs */
+        .form-label, label.block { display: block; margin-bottom: 0.5rem; }
+        input, select, textarea { line-height: 1.5; }
+        /* Ensure proper spacing in form */
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+
+        /* Ensure exact text colors */
+                .text-\[\#F0D9A8\]\/70{color:rgba(240,217,168,0.7)}
+        .text-\[\#FFFCF5\]\/90 { color: rgba(255,252,245,0.9); }
+        .text-\[\#FFFCF5\]\/80 { color: rgba(255,252,245,0.8); }
+        .text-\[\#FFFCF5\]\/50 { color: rgba(255,252,245,0.5); }
+        .text-\[\#FFFCF5\]\/40 { color: rgba(255,252,245,0.4); }
+        .placeholder-\[\#FFFCF5\]\/40::placeholder { color: rgba(255,252,245,0.4); }
+
+        /* Core utilities used in your page */
+        .relative{position:relative}.absolute{position:absolute}.inset-0{inset:0}.z-10{z-index:10}
+        .h-\[100vh\]{height:100vh}.min-h-\[700px\]{min-height:700px}.overflow-hidden{overflow:hidden}
+        .w-full{width:100%}.h-full{height:100%}.object-cover{object-fit:cover}
+        .flex{display:flex}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}
+        .text-center{text-align:center}.px-6{padding:0 1.5rem}.max-w-5xl{max-width:64rem;margin:0 auto}
+        .max-w-3xl{max-width:48rem;margin:0 auto}.max-w-6xl{max-width:72rem;margin:0 auto}
+        .block{display:block}.leading-\[0\.9\]{line-height:.9}.tracking-wide{letter-spacing:.025em}
+        .text-\[clamp\(3\.5rem\,12vw\,9rem\)\]{font-size:clamp(3.5rem,12vw,9rem)}
+        .text-\[clamp\(2\.5rem\,9vw\,7rem\)\]{font-size:clamp(2.5rem,9vw,7rem)}
+        .font-medium{font-weight:500}.font-normal{font-weight:400}.italic{font-style:italic}
+        .align-middle{vertical-align:middle}.mx-3{margin:0 .75rem}.-mt-2{margin-top:-.5rem}
+        .text-\[\#FFFCF5\]{color:#FFFCF5}.text-\[\#F0D9A8\]{color:#F0D9A8}
+        .text-\[\#FFFCF5\]\/95{color:rgba(255,252,245,.95)}.text-\[\#F0E6D2\]{color:#F0E6D2}
+        .text-\[\#F0E6D2\]\/70{color:rgba(240,230,210,.7)}.text-\[\#FFFCF5\]\/60{color:rgba(255,252,245,.6)}
+        .text-lg{font-size:1.125rem}.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem}
+        .text-4xl{font-size:2.25rem}.text-sm{font-size:.875rem}.text-xs{font-size:.75rem}
+        .leading-relaxed{line-height:1.625}.w-48{width:12rem}.w-32{width:8rem}.w-16{width:4rem}.w-8{width:2rem}
+        .w-\[1px\]{width:1px}.h-12{height:3rem}.h-px{height:1px}
+        .my-8{margin:2rem 0}.mx-auto{margin:0 auto}.mt-1{margin-top:.25rem}.mt-4{margin-top:1rem}
+        .mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}
+        .mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}
+        .py-20{padding:5rem 0}.py-12{padding:3rem 0}.p-8{padding:2rem}.p-3{padding:.75rem}
+        .bottom-8{bottom:2rem}.left-1\/2{left:50%}.-translate-x-1\/2{transform:translateX(-50%)}
+        .gap-3{gap:.75rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-12{gap:3rem}
+        .space-y-6>:not([hidden])~:not([hidden]){margin-top:1.5rem}
+        .space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}
+        .grid{display:grid}.bg-\[\#FFFCF5\]{background:#FFFCF5}.bg-\[\#F8F3E7\]{background:#F8F3E7}
+        .bg-\[\#0F241C\]{background:#0F241C}.bg-white{background:#fff}
+        .bg-gradient-to-b{background-image:linear-gradient(to bottom,var(--tw-gradient-stops))}
+        .bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}
+        .bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}
+        .from-\[\#FFFCF5\]\/60{--tw-gradient-from:rgba(255,252,245,.6);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,transparent)}
+        .from-transparent{--tw-gradient-from:transparent;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,transparent)}
+        .from-black\/60{--tw-gradient-from:rgba(0,0,0,.6);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,transparent)}
+        .via-\[\#C4A46A\]\/30{--tw-gradient-stops:var(--tw-gradient-from),rgba(196,164,106,.3),var(--tw-gradient-to,transparent)}
+        .to-transparent{--tw-gradient-to:transparent}
+        .text-\[\#0F241C\]{color:#0F241C}.text-\[\#0F241C\]\/80{color:rgba(15,36,28,.8)}
+        .text-\[\#0F241C\]\/70{color:rgba(15,36,28,.7)}.text-\[\#0F241C\]\/50{color:rgba(15,36,28,.5)}
+        .text-\[\#0F241C\]\/85{color:rgba(15,36,28,.85)}.uppercase{text-transform:uppercase}
+        .tracking-\[0\.2em\]{letter-spacing:.2em}.tracking-widest{letter-spacing:.1em}
+        .rounded-full{border-radius:9999px}.rounded-\[2px\]{border-radius:2px}.border{border-width:1px}
+        .border-\[\#C4A46A\]\/30{border-color:rgba(196,164,106,.3)}.border-\[\#C4A46A\]\/50{border-color:rgba(196,164,106,.5)}
+        .h-\[420px\]{height:420px}.bg-\[\#0F172A\]{background:#0F172A}.pointer-events-none{pointer-events:none}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        .cursor-pointer{cursor:pointer}.w-5{width:1.25rem}.h-5{height:1.25rem}.mr-3{margin-right:.75rem}
+        .w-2\.5{width:.625rem}.h-2\.5{height:.625rem}.bg-\[\#F0D9A8\]{background:#F0D9A8}
+        .opacity-0{opacity:0}.transition-colors{transition:.15s}.transition-opacity{transition:opacity .15s}
+        .hover\:text-\[\#C4A46A\]:hover{color:#C4A46A}.hover\:border-\[\#C4A46A\]:hover{border-color:#C4A46A}
+        .group:hover .group-hover\:border-\[\#C4A46A\]{border-color:#C4A46A}
+        .group:hover .group-hover\:text-\[\#FFFCF5\]{color:#FFFCF5}
+        .group:has(input:checked) .group-\[\&\:has\(input\:checked\)\]\:opacity-100{opacity:1}
+        .text-\[17px\]{font-size:17px}.leading-8{line-height:2rem}
+        .animate-pulse{animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+        .w-12{width:3rem}
+        
+        @media(min-width:768px){
+            .md\:-mt-6{margin-top:-1.5rem}.md\:mx-6{margin:0 1.5rem}.md\:my-12{margin:3rem 0}
+            .md\:mt-6{margin-top:1.5rem}.md\:mt-10{margin-top:2.5rem}.md\:w-72{width:18rem}
+            .md\:text-2xl{font-size:1.5rem}.md\:text-3xl{font-size:1.875rem}.md\:text-5xl{font-size:3rem}
+            .md\:py-28{padding:7rem 0}.md\:p-10{padding:2.5rem}.md\:h-\[480px\]{height:480px}
+            .md\:text-base{font-size:1rem}.md\:grid-cols-2{grid-template-columns:repeat(2,1fr)}
+            .md\:grid-cols-3{grid-template-columns:repeat(3,1fr)}.md\:gap-8{gap:2rem}.md\:w-auto{width:auto}
+        }
+        @media(min-width:1024px){
+            .lg\:grid-cols-5{grid-template-columns:repeat(5,1fr)}.lg\:grid-cols-2{grid-template-columns:repeat(2,1fr)}
+            .lg\:col-span-2{grid-column:span 2}.lg\:col-span-3{grid-column:span 3}
+            .lg\:gap-20{gap:5rem}.lg\:gap-10{gap:2.5rem}
+        }
+        
+        /* Form elements */
+        input,select,textarea,button{font-family:inherit}
+        input[type=text],input[type=email],select,textarea{width:100%;padding:.75rem 1rem;background:rgba(255,252,245,.05);border:1px solid rgba(196,164,106,.3);color:#FFFCF5}
+        input::placeholder,textarea::placeholder{color:rgba(255,252,245,.4)}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:#C4A46A}
+        select option{background:#0F241C}
+        button[type="submit"], button{padding:1rem 3rem;background-color:#C4A46A !important;color:#0F241C;font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:.875rem;border:none;cursor:pointer}
+        button:hover{background:#F0D9A8}
+    
+        /* Fix hero date line spacing - remove default p margins */
+        .hero-date p { margin: 0; line-height: 1.4; }
+        @media(min-width:768px){ .hero-date p { line-height: 1.5; } }
+
+    
+        /* Fix links - remove default blue */
+        a { color: inherit; text-decoration: none; }
+        a:hover { color: #C4A46A; }
+
+        /* Fix radio buttons - ensure :has() works */
+        .group:has(input:checked) .group-\[\&\:has\(input\:checked\)\]\:opacity-100 { opacity: 1; }
+        /* Ensure SVG icons inherit color */
+        svg { color: inherit; }
+        .text-\[\#C4A46A\] { color: #C4A46A; }
+
+    </style>
     <style>
         :root {
             --ivory: #FFFCF5;
@@ -58,6 +220,22 @@
             opacity: 1;
             transform: translateY(0);
         }
+    
+        /* Fix hero date line spacing - remove default p margins */
+        .hero-date p { margin: 0; line-height: 1.4; }
+        @media(min-width:768px){ .hero-date p { line-height: 1.5; } }
+
+    
+        /* Fix links - remove default blue */
+        a { color: inherit; text-decoration: none; }
+        a:hover { color: #C4A46A; }
+
+        /* Fix radio buttons - ensure :has() works */
+        .group:has(input:checked) .group-\[\&\:has\(input\:checked\)\]\:opacity-100 { opacity: 1; }
+        /* Ensure SVG icons inherit color */
+        svg { color: inherit; }
+        .text-\[\#C4A46A\] { color: #C4A46A; }
+
     </style>
 </head>
 <body>
@@ -77,7 +255,7 @@
                     <span class="block text-[clamp(3.5rem,12vw,9rem)] font-medium -mt-2 md:-mt-6">Juliette</span>
                 </h1>
                 <div class="gold-rule w-48 md:w-72 mx-auto my-8 md:my-12"></div>
-                <div class="font-playfair text-[#FFFCF5]/95 text-lg md:text-2xl leading-relaxed">
+                <div class="font-playfair text-[#FFFCF5]/95 text-lg md:text-2xl leading-relaxed hero-date">
                     <p>Saturday, the third of July</p>
                     <p>Anno Domini MMXXVII</p>
                     <p class="mt-1">at two o'clock in the afternoon</p>
